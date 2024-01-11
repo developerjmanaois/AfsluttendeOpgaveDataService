@@ -6,8 +6,8 @@ const Navbar = () => {
     return (
 
 
-        <nav>
-            <div className="navbar bg-blue-200 p-10 rounded-md">
+        <nav className='bg-slate-100'>
+            <div className="navbar max-w-screen-xl mx-auto p-10 rounded-md">
                 <div className="navbar-start">
                     <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -35,25 +35,35 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/about" className='hover:text-gray-200'>
-                                Om os
+                            <NavLink to="/viborghaveservice1" className='hover:text-gray-200'>
+                                Viborg Have Service
+                            </NavLink>
+                        </li>
+                        {/* <li>
+                            <NavLink to="/viborghaveservice2" className='hover:text-gray-200'>
+                                Viborg Have Service
+                            </NavLink>
+                        </li> */}
+                        <li>
+                            <NavLink to="/vejret" className='hover:text-gray-200' >
+                                Vejret
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/news" className='hover:text-gray-200'>
+                            <NavLink to="/nyheder" className='hover:text-gray-200' >
                                 Nyheder
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/contact" className='hover:text-gray-200' >
-                                Kontakt
+                            <NavLink to="/energidata" className='hover:text-gray-200' >
+                                Energi Data
                             </NavLink>
                         </li>
                         <li>
                             <details>
                             <summary>JSONPlaceholder</summary>
                             <ul className="p-2">
-                                <li>
+                                {/* <li>
                                     <NavLink to="/postadmin" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                                                 PostAdmin
                                     </NavLink>
@@ -77,14 +87,14 @@ const Navbar = () => {
                                     <NavLink to="/post" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                                                 Post
                                     </NavLink>
-                                </li>
+                                </li> */}
                             </ul>
                             </details>
                         </li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <a className="btn bg-green-500">Kontakt os</a>
                 </div>
             </div>
         </nav>
