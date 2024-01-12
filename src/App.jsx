@@ -11,6 +11,7 @@ import ViborgHaveservice2 from './views/haveservice/ViborgHaveservice2';
 import Vejret from './views/vejret/Vejret';
 import Nyheder from './views/nyheder/Nyheder';
 import EnergiData from './views/energidata/EnergiData';
+import Weathercard from './views/vejret/Weathercard';
 
 function App () {
 
@@ -26,6 +27,7 @@ function App () {
           <Route path="viborghaveservice2" element={ <ViborgHaveservice2 /> } />
           <Route path="viborghaveservice2" element={ <ViborgHaveservice2 /> } />
           <Route path="vejret" element={ <Vejret /> } />
+          <Route path="weathercard" element={ <Weathercard /> } />
           <Route path="nyheder" element={ <Nyheder /> } />
           <Route path="energidata" element={ <EnergiData /> } />
           <Route path="*" element={ <NoMatch /> } />

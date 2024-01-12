@@ -25,10 +25,20 @@ const ViborgHaveservice1 = () => {
 
   }, []);
 
+  // useEffect(() => {
+  //   // When servicesData is available, set the random offset
+  //   if (servicesData && servicesData.length > 1) {
+  //     setRandomOffset(Math.floor(Math.random() * servicesData.length));
+  //   }
+  // }, [servicesData]);
+
   useEffect(() => {
     // When servicesData is available, set the random offset
-    if (servicesData && servicesData.length > 0) {
-      setRandomOffset(Math.floor(Math.random() * servicesData.length));
+    if (servicesData && servicesData.length > 1) {
+      setRandomOffset(Math.floor(Math.random() * (servicesData.length - 1)));
+    } else {
+      // If there's only one or zero services, set randomOffset to 0 or handle it differently
+      setRandomOffset(0);
     }
   }, [servicesData]);
 
