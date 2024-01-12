@@ -71,10 +71,10 @@ const ViborgHaveservice1 = () => {
                     </a>
                   </figure>
                   <div className='card-body max-w-xs mx-auto'>
-                    <h2 className='card-title'>
+                    <h2 className='card-title '>
                       <a href='/'>{t.title}</a>
                     </h2>
-                    <p>{t.content}</p>
+                    <p className='py-4 font-medium'>{t.content}</p>
                     <p>Id: {t._id}</p>
                   </div>
 

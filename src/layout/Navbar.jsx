@@ -45,11 +45,6 @@ const Navbar = () => {
                             </NavLink>
                         </li> */}
                         <li>
-                            <NavLink to="/vejret" className='hover:bg-green-500' >
-                                Vejret
-                            </NavLink>
-                        </li>
-                        <li>
                             <NavLink to="/nyheder" className='hover:bg-green-500' >
                                 Nyheder
                             </NavLink>
@@ -61,19 +56,19 @@ const Navbar = () => {
                         </li>
                         <li>
                             <details>
-                            <summary>JSONPlaceholder</summary>
+                            <summary>Vejret</summary>
                             <ul className="p-2">
+                                <li>
+                                    <NavLink to="/vejret" className='hover:bg-green-500' >
+                                        Vejret
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/vejretzip" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                                        Vejret med zip
+                                    </NavLink>
+                                </li>
                                 {/* <li>
-                                    <NavLink to="/postadmin" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                                PostAdmin
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/todos" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                                Todos
-                                    </NavLink>
-                                </li>
-                                <li>
                                     <NavLink to="/photos" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                                                 Photos
                                     </NavLink>

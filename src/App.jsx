@@ -12,6 +12,7 @@ import Vejret from './views/vejret/Vejret';
 import Nyheder from './views/nyheder/Nyheder';
 import EnergiData from './views/energidata/EnergiData';
 import Weathercard from './views/vejret/Weathercard';
+import VejretZip from './views/vejret/VejretZip';
 
 function App () {
 
@@ -27,6 +28,7 @@ function App () {
           <Route path="viborghaveservice2" element={ <ViborgHaveservice2 /> } />
           <Route path="viborghaveservice2" element={ <ViborgHaveservice2 /> } />
           <Route path="vejret" element={ <Vejret /> } />
+          <Route path="vejretzip" element={ <VejretZip /> } />
           <Route path="weathercard" element={ <Weathercard /> } />
           <Route path="nyheder" element={ <Nyheder /> } />
           <Route path="energidata" element={ <EnergiData /> } />
