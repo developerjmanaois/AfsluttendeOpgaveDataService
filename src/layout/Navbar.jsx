@@ -30,12 +30,12 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-3">
                         <li>
-                            <NavLink to="/" className='hover:text-gray-200'>
+                            <NavLink to="/" className='hover:bg-green-500'>
                                 Home
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/viborghaveservice1" className='hover:text-gray-200'>
+                            <NavLink to="/viborghaveservice1" className='hover:bg-green-500'>
                                 Viborg Have Service
                             </NavLink>
                         </li>
@@ -45,17 +45,17 @@ const Navbar = () => {
                             </NavLink>
                         </li> */}
                         <li>
-                            <NavLink to="/vejret" className='hover:text-gray-200' >
+                            <NavLink to="/vejret" className='hover:bg-green-500' >
                                 Vejret
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/nyheder" className='hover:text-gray-200' >
+                            <NavLink to="/nyheder" className='hover:bg-green-500' >
                                 Nyheder
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/energidata" className='hover:text-gray-200' >
+                            <NavLink to="/energidata" className='hover:bg-green-500' >
                                 Energi Data
                             </NavLink>
                         </li>

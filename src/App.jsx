@@ -23,7 +23,7 @@ function App () {
         <Route path="/" element={ <Layout /> }>
           <Route index element={ <Home /> } />
           <Route path="viborghaveservice1" element={ <ViborgHaveservice1 /> } />
-          <Route path="viborghaveservice2/:todoID" element={ <ViborgHaveservice2 /> } />
+          <Route path="viborghaveservice2" element={ <ViborgHaveservice2 /> } />
           <Route path="viborghaveservice2" element={ <ViborgHaveservice2 /> } />
           <Route path="vejret" element={ <Vejret /> } />
           <Route path="nyheder" element={ <Nyheder /> } />

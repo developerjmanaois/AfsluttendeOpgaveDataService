@@ -2,3 +2,55 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+  
+* {
+    box-sizing: border-box;
+}
+
+.bg-text {
+    display: grid;
+    background-color: rgb(22,163,74); /* Fallback color */
+    background-color: rgba(22,163,74, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    z-index: 2;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+
+
+.bg-image {
+    /* The image used */
+    background-image: url("../public/assets/images/udtalelser-bg.jpg");
+    
+    /* Full height */
+    height: 60vh; 
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

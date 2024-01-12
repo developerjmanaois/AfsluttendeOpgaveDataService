@@ -1,32 +1,41 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import useRequestData from "../../hooks/useRequestData";
 import { useParams } from "react-router-dom";
 import Error from "../../components/Error";
 import Loader from "../../components/Loader";
 
-const MyTodosEdit = () => {
+const ViborgHaveservice2 = () => {
 
-    const refDone = useRef()
-
-    const { todoID } = useParams();
 
     const { data, isLoading, error, makeRequest } = useRequestData();
+
     const { data: dataPUT, isLoading: isLoadingPUT, error: errorPUT, makeRequest: makeRequestPUT } = useRequestData();
+
+    const [ title, setTitle ] = useState( "" )
+    const [ content, setContent ] = useState( "" )
 
     useEffect( () => {
 
-        makeRequest( "http://localhost:5023/aboutus/" + todoID )
+        makeRequest( "http://localhost:5023/aboutus" )
 
-    }, [todoID] )
+    }, [] )
+
+    useEffect( () => {
+
+        if(data && data.about) {
+            
+            setContent(data.about.content)
+        }
+
+    }, [data] )
 
     const handleSubmit = e => {
 
         e.preventDefault();
 
-        const fd = new FormData(e.target)
+        const rettetAboutUs = { content: content }
 
-
-        makeRequestPUT( "http://localhost:5023/aboutus/admin/" + todoID, "PUT", fd )
+        makeRequestPUT( "http://localhost:5023/aboutus/admin", "PUT", rettetAboutUs )
 
     }
 
@@ -34,55 +43,55 @@ const MyTodosEdit = () => {
 
         <div>
 
-            <h1 className="my-6 text-3xl font-bold text-center">MyTodo - Edit/update Posts</h1>
+            <h1 className="mb-6 text-3xl font-bold text-center">About Us - Edit/update Posts</h1>
 
-            { (error || errorPUT ) && <Error /> }
-            { (isLoading || isLoadingPUT ) && <Loader /> }
+            { (error || errorPUT) && <Error /> }
+            { (isLoading || isLoadingPUT) && <Loader /> }
 
             {
                 dataPUT &&
-                    <div className="card">
+                    <div className="card max-w-screen-md mx-auto">
                         <div className="card-body">
                             <h2>Todo er rettet!</h2>
-                            <p>Title: { dataPUT.about.title }</p>
-                            <p>Description: { dataPUT.about.description }</p>
+                            <p>Title: {dataPUT.about.title}</p>
+                            <p>Content: { dataPUT.about.content }</p>
                         </div>
                     </div>
             }
 
-            {
-                data && 
+            <form className='form-control max-w-screen-md mx-auto' onSubmit={ handleSubmit }>
 
-                <form className='form-control' onSubmit={ handleSubmit }>
+                <label htmlFor='inpTitle'>Title</label>
+                <input 
+                    id='inpTitle'
+                    type="text" 
+                    onInput={ e => setTitle( e.target.value )}
+                    value={ title }
+                    required
+                    placeholder="Title" 
+                    className="input input-bordered w-full" />
                     
-                    <label htmlFor='inpTitle'>Title</label>
-                    <input 
-                        id='inpTitle'
-                        type="text"
-                        name="title" 
-                        defaultValue={ data.about.title }
-                        required
-                        placeholder="Title" 
-                        className="input input-bordered w-full" />
+                    
+                <label htmlFor='txtContent' className="mt-4">Content</label>
+                <textarea 
+                    id='txtContent'
+                    onInput={ e => setContent( e.target.value ) }
+                    value={ content }
+                    required
+                    placeholder="Content" 
+                    className="textarea textarea-bordered w-full" />
+                
+                {/* <label htmlFor='chkDone' className="mt-4">Udført</label>
+                <input type="checkbox" name="done" value="true" id="chkDone" defaultChecked={ done } onChange={ e => e.checked ? setDone( true ) : setDone( false )} /> */}
+                
 
-                    <label htmlFor='txtContent' className="mt-4">Description</label>
-                    <textarea 
-                        id='txtContent'
-                        name="content"
-                        defaultValue={ data.about.description }
-                        required
-                        placeholder="Content" 
-                        className="textarea textarea-bordered w-full" />
+                <button type='submit' className='my-10 btn bg-green-500'>Opret ny post</button>
 
-                    <button type='submit' className='mt-4 btn'>Ret Todo</button>
-
-                </form>
-            }
-
+            </form>
 
         </div>
 
     )
 
 }
-export default MyTodosEdit;
+export default ViborgHaveservice2;
