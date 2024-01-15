@@ -44,7 +44,7 @@ body, html {
 
 .bg-image {
     /* The image used */
-    background-image: url("../public/assets/images/udtalelser-bg.jpg");
+    background-image: url("/assets/images/udtalelser-bg.jpg");
     
     /* Full height */
     height: 60vh; 
@@ -54,3 +54,20 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.graph-container {
+    width: 500px;
+    height: 300px;
+    border: 1px solid #ccc;
+    position: relative;
+  }
+  
+  .graph-bar {
+    background-color: #3498db;
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+  }
+
+
+  

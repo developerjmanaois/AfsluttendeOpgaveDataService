@@ -28,7 +28,7 @@ const Navbar = () => {
                     <a className="btn btn-ghost text-xl">LOGO</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-3">
+                    <ul className="menu menu-horizontal gap-8">
                         <li>
                             <NavLink to="/" className='hover:bg-green-500'>
                                 Home
@@ -50,9 +50,22 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/energidata" className='hover:bg-green-500' >
-                                Energi Data
-                            </NavLink>
+                            <details>
+                                <summary>Energy</summary>
+                                <ul>
+                                    <li>
+                                        <NavLink to="/energidata" className='hover:bg-green-500' >
+                                        Energi Data
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/graph" className='hover:bg-green-500' >
+                                        Graph
+                                        </NavLink>
+                                    </li>
+                                </ul>
+                            </details>
+                            
                         </li>
                         <li>
                             <details>
@@ -61,6 +74,16 @@ const Navbar = () => {
                                 <li>
                                     <NavLink to="/vejret" className='hover:bg-green-500' >
                                         Vejret
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/vejret2" className='hover:bg-green-500' >
+                                        Vejret - 2
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/vejret3" className='hover:bg-green-500' >
+                                        Vejret - 3
                                     </NavLink>
                                 </li>
                                 <li>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useRequestData from '../../hooks/useRequestData';
 import Loader from '../../components/Loader';
-import parse from 'react-html-parser';
 
 
 const ViborgHaveservice1 = () => {
@@ -56,14 +55,17 @@ const ViborgHaveservice1 = () => {
             </h1>
           </div>
           <div className='max-w-screen-sm mx-auto'>
-            {aboutUsData && <h4 className='pb-10'>{parse(aboutUsData.content)}</h4>}
+            {
+              aboutUsData &&
+              <div dangerouslySetInnerHTML={{ __html: aboutUsData.content }} className='pb-10'></div> 
+            }
             <button className="btn bg-green-500"><a href="/viborghaveservice2">SE ALLE YDELSER</a></button>
           </div>
         </div>
-        <div className='grid grid-cols-1 gap-14 sm:grid-cols-2 md:grid-cols-2 max-w-screen-xl mx-auto py-20'>
+        <div className='grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-2 max-w-screen-xl mx-auto py-20'>
           {servicesData &&
             servicesData.slice(randomOffset, randomOffset + 2).map((t) => (
-              <div key={t._id} className='card w-96 bg-base-100 shadow-xl py-7'>
+              <div key={t._id} className='card w-96  bg-slate-100 shadow-xl py-7'>
                 <div className='py-6'>
                   <figure>
                     <a href='/'>

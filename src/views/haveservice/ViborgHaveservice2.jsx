@@ -43,7 +43,7 @@ const ViborgHaveservice2 = () => {
 
         <div>
 
-            <h1 className="mb-6 text-3xl font-bold text-center">About Us - Edit/update Posts</h1>
+            <h1 className="my-6 text-3xl font-bold text-center">About Us - Edit/update Posts</h1>
 
             { (error || errorPUT) && <Error /> }
             { (isLoading || isLoadingPUT) && <Loader /> }
