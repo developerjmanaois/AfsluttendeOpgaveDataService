@@ -73,26 +73,6 @@ const Navbar = () => {
                                         Vejret - 3
                                     </NavLink>
                                 </li>
-                                <li>
-                                    <NavLink to="/vejretzip" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                        Vejret med zip
-                                    </NavLink>
-                                </li>
-                                {/* <li>
-                                    <NavLink to="/photos" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                                Photos
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/posts" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                                Posts
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/post" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                                                Post
-                                    </NavLink>
-                                </li> */}
                             </ul>
                             </details>
                         </li>
