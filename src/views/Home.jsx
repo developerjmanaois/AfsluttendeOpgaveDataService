@@ -21,15 +21,14 @@ const Home = () => {
   return (
 
     <section>
+
       { isLoading && <Loader /> }
       { error && <h2>Error ...</h2> }
 
-      {/* <img src="assets/images/udtalelser-bg.jpg" className='opacity-50 hover:opacity-100' alt="" />
-      <h1>Home</h1> */}
       <div className="hero min-h-screen" style={{backgroundImage: 'url(assets/images/udtalelser-bg.jpg)'}}>
-        <div className="hero-overlay bg-opacity-60"></div>
+        <div className="hero-overlay bg-opacity-20"></div>
         <div className="text-left text-neutral-content">
-          <div className="">
+          <div className="shadow-xl">
             <span className='text-lg font-semibold'>Viborg Haveservice</span> <br />
             <h1 className="mb-10 text-6xl font-bold leading-tight">
               Fokus på god service <br /> & kvalitet
@@ -42,54 +41,27 @@ const Home = () => {
       <div>
         <h2 className='text-4xl font-bold text-center py-10'>YDELSER</h2>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 max-w-7xl mx-auto pb-20">
-        {data && data.records.map(p => 
-            <div className="card card-compact w-96 bg-base-100 shadow-xl image-full" key={p.id}>
+          {data && data.records.map(p => 
+            <div className="container" key={p.id}>
               {/* Map over images for each service */}
               {p.fields.image && p.fields.image.map(image => 
-                <figure key={image.id}>
+                <figure key={image.id} className='object-cover'>
                   <img
                     src={image.url}
                     alt={image.filename}
                     width={image.thumbnails.large.width}
                     height={image.thumbnails.large.height}
+                    className='object-fill h-64 w-full'
                   />
                 </figure>
               )}
               {/* Service details */}
-              <div className="card-body place-self-center">
+              <div className="content">
                 <h2 className="font-semibold text-lg text-center">{p.fields.Name}</h2>  
               </div>
             </div>
           )}
-          </div>
-          {/* <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 max-w-7xl mx-auto pb-20">
-          <div className="card w-96 bg-base-100 shadow-xl image-full">
-            <figure>
-              <img src="assets/images/ydelser/ydelser-2.jpg" alt="Shoes" />
-            </figure>
-            <div className="card-body place-self-center">
-              <h2 className="font-semibold text-lg text-center">Anlæg af have</h2>
-            </div>
-          </div>
-          <div className="card w-96 bg-base-100 shadow-xl image-full">
-            <figure>
-              <img src="assets/images/ydelser/ydelser-2.jpg" alt="Shoes" />
-            </figure>
-            <div className="card-body place-self-center">
-              <h2 className="font-semibold text-lg text-center">Anlæg af have</h2>
-            </div>
-          </div>
-          <div className="card w-96 bg-base-100 shadow-xl image-full">
-            <figure>
-              <img src="assets/images/ydelser/ydelser-2.jpg" alt="Shoes" />
-            </figure>
-            <div className="card-body place-self-center">
-              <h2 className="font-semibold text-lg text-center">Anlæg af have</h2>
-            </div>
-          </div>
-          
-        </div> */}
-        
+        </div>   
       </div>
 
     </section>

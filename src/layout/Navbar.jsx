@@ -48,29 +48,11 @@ const Navbar = () => {
                             <NavLink to="/nyheder" className='hover:bg-green-500' >
                                 Nyheder
                             </NavLink>
-                        </li>
+                        </li>   
                         <li>
-                            <details>
-                                <summary>Energy</summary>
-                                <ul>
-                                    <li>
-                                        <NavLink to="/energidata" className='hover:bg-green-500' >
-                                        Energi Data
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/energidata1" className='hover:bg-green-500' >
-                                        Energi Data1
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/graph" className='hover:bg-green-500' >
-                                        Graph
-                                        </NavLink>
-                                    </li>
-                                </ul>
-                            </details>
-                            
+                            <NavLink to="/energidata" className='hover:bg-green-500' >
+                            Energi Priser
+                            </NavLink>
                         </li>
                         <li>
                             <details>

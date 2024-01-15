@@ -10,7 +10,7 @@ const Nyheder = () => {
 
   const { isLoading, data, error, makeRequest } = useRequestData();
 
-  const [ searchKey, setSearchKey ] = useState( "denmark" );
+  const [ searchKey, setSearchKey ] = useState();
 
   const [ language, setLanguage ] = useState( "en" );
 
@@ -28,7 +28,6 @@ const Nyheder = () => {
   useEffect( () => {
 
     makeRequest( "https://newsapi.org/v2/everything?q=" + searchKey + "&pageSize=50&language=" + language + "&apiKey=3ce4eed9a78b4a22aadff41589164f32", "GET" )
-    // makeRequest( `https://newsapi.org/v2/everything?q=${searchKey}&pageSize=50&language=en&apiKey=3ce4eed9a78b4a22aadff41589164f32`, "GET" )
 
   }, [language, sortOrder] )
 
@@ -68,9 +67,9 @@ const Nyheder = () => {
       
       </form>
 
-      <div className='mt-4 mb-6'>
+      <div>
         <select onChange={ e => setLanguage( e.target.value ) }>
-          <option value="ar">Choose Language</option>
+          <option>Choose Language</option>
           {
             newsParam && newsParam.language.map( c => 
             
@@ -98,8 +97,6 @@ const Nyheder = () => {
                   <h2 className='text-xl'>{n.title}</h2>
                 </div>
                 <span className='text-sm'>Author: <i>{n.author}</i></span>
-
-                {/* time dateTime={n.publishedAt} */}
                 
                 <p className='text-gray-500 italic text-xs'>{new Date( n.publishedAt ).toLocaleString("da-DK", { year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "2-digit" })}</p>
 

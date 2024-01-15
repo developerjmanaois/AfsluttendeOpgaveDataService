@@ -12,11 +12,8 @@ import Vejret from './views/vejret/Vejret';
 import Nyheder from './views/nyheder/Nyheder';
 import EnergiData from './views/energidata/EnergiData';
 import Weathercard from './views/vejret/Weathercard';
-import VejretZip from './views/vejret/VejretZip';
-import Graph from './views/energidata/Graph';
 import Vejret2 from './views/vejret/Vejret2';
 import Vejret3 from './views/vejret/Vejret3';
-import EnergiData1 from './views/energidata/EnergiData1';
 
 function App () {
 
@@ -34,12 +31,9 @@ function App () {
           <Route path="vejret" element={ <Vejret /> } />
           <Route path="vejret2" element={ <Vejret2 /> } />
           <Route path="vejret3" element={ <Vejret3 /> } />
-          <Route path="vejretzip" element={ <VejretZip /> } />
           <Route path="weathercard" element={ <Weathercard /> } />
           <Route path="nyheder" element={ <Nyheder /> } />
           <Route path="energidata" element={ <EnergiData /> } />
-          <Route path="energidata1" element={ <EnergiData1 /> } />
-          <Route path="graph" element={ <Graph /> } />
           <Route path="*" element={ <NoMatch /> } />
         </Route>
 

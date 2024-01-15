@@ -80,11 +80,7 @@ const ViborgHaveservice2 = () => {
                     required
                     placeholder="Content" 
                     className="textarea textarea-bordered w-full" />
-                
-                {/* <label htmlFor='chkDone' className="mt-4">Udført</label>
-                <input type="checkbox" name="done" value="true" id="chkDone" defaultChecked={ done } onChange={ e => e.checked ? setDone( true ) : setDone( false )} /> */}
-                
-
+       
                 <button type='submit' className='my-10 btn bg-green-500'>Opret ny post</button>
 
             </form>
