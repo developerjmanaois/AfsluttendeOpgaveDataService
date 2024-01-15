@@ -40,7 +40,7 @@ const Home = () => {
 
       <div>
         <h2 className='text-4xl font-bold text-center py-10'>YDELSER</h2>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 max-w-7xl mx-auto pb-20">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 max-w-7xl mx-auto pb-20">
           {data && data.records.map(p => 
             <div className="container" key={p.id}>
               {/* Map over images for each service */}
