@@ -24,6 +24,7 @@ const ViborgHaveservice1 = () => {
 
   }, []);
 
+
   // useEffect(() => {
   //   // When servicesData is available, set the random offset
   //   if (servicesData && servicesData.length > 1) {
@@ -50,8 +51,8 @@ const ViborgHaveservice1 = () => {
         <div className='py-16'>
           <div>
             <h1 className='text-4xl font-bold text-center mb-10'>
-              Velkommen til <br />
-              <span className='text-green-600 text-5xl'>Viborg Have Service</span>
+              <span>Velkommen til</span> <span className='text-green-600 text-5xl'>Viborg</span> <br />
+              <span className='text-green-600 text-5xl'>Have Service</span>
             </h1>
           </div>
           <div className='max-w-screen-sm mx-auto'>

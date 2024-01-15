@@ -79,7 +79,7 @@ const Nyheder = () => {
             )
           }
         </select>
-        <select onChange={handleSortChange} value={sortOrder} className='ml-8'>
+        <select onChange={handleSortChange} value={sortOrder} className='ml-8 py-6 px-2'>
           <option value="publishedAt">Sort by Published At</option>
           <option value="relevancy">Sort by Relevancy</option>
           <option value="popularity">Sort by Popularity</option>

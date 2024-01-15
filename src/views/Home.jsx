@@ -8,9 +8,21 @@ const Home = () => {
 
   const { data, isLoading, error, makeRequest } = useRequestData()
 
+  useEffect( () => {
+
+    makeRequest( "https://api.airtable.com/v0/appIzu5cUrVxMACN4/Table%201", "GET", null,
+
+    { "Authorization": "Bearer " + import.meta.env.VITE_APP_AIRTABLEAPIKEY }
+    
+    )
+
+  }, [] )
+
   return (
 
     <section>
+      { isLoading && <Loader /> }
+      { error && <h2>Error ...</h2> }
 
       {/* <img src="assets/images/udtalelser-bg.jpg" className='opacity-50 hover:opacity-100' alt="" />
       <h1>Home</h1> */}
@@ -29,8 +41,28 @@ const Home = () => {
 
       <div>
         <h2 className='text-4xl font-bold text-center py-10'>YDELSER</h2>
-
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 max-w-7xl mx-auto pb-20">
+        {data && data.records.map(p => 
+            <div className="card card-compact w-96 bg-base-100 shadow-xl image-full" key={p.id}>
+              {/* Map over images for each service */}
+              {p.fields.image && p.fields.image.map(image => 
+                <figure key={image.id}>
+                  <img
+                    src={image.url}
+                    alt={image.filename}
+                    width={image.thumbnails.large.width}
+                    height={image.thumbnails.large.height}
+                  />
+                </figure>
+              )}
+              {/* Service details */}
+              <div className="card-body place-self-center">
+                <h2 className="font-semibold text-lg text-center">{p.fields.Name}</h2>  
+              </div>
+            </div>
+          )}
+          </div>
+          {/* <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 max-w-7xl mx-auto pb-20">
           <div className="card w-96 bg-base-100 shadow-xl image-full">
             <figure>
               <img src="assets/images/ydelser/ydelser-2.jpg" alt="Shoes" />
@@ -56,7 +88,8 @@ const Home = () => {
             </div>
           </div>
           
-        </div>
+        </div> */}
+        
       </div>
 
     </section>

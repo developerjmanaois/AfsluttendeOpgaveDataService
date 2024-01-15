@@ -16,6 +16,7 @@ import VejretZip from './views/vejret/VejretZip';
 import Graph from './views/energidata/Graph';
 import Vejret2 from './views/vejret/Vejret2';
 import Vejret3 from './views/vejret/Vejret3';
+import EnergiData1 from './views/energidata/EnergiData1';
 
 function App () {
 
@@ -37,6 +38,7 @@ function App () {
           <Route path="weathercard" element={ <Weathercard /> } />
           <Route path="nyheder" element={ <Nyheder /> } />
           <Route path="energidata" element={ <EnergiData /> } />
+          <Route path="energidata1" element={ <EnergiData1 /> } />
           <Route path="graph" element={ <Graph /> } />
           <Route path="*" element={ <NoMatch /> } />
         </Route>

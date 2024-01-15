@@ -40,6 +40,9 @@ const EnergyData = () => {
     <div>
       <h1 className='my-6 text-3xl font-bold text-center'>Energy Prices</h1>
 
+      {isLoading && <Loader />}
+      {error && <Error />}
+    
       <div className='my-4 px-10'>
         <h3>
           <small>Data from your energy prices API:</small>
@@ -87,8 +90,6 @@ const EnergyData = () => {
         </div>
       </div>
 
-      {isLoading && <Loader />}
-      {error && <Error />}
 
       {data && (
         <div className='card w-96 bg-base-100 shadow-xl mt-6'>

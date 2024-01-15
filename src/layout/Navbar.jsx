@@ -59,6 +59,11 @@ const Navbar = () => {
                                         </NavLink>
                                     </li>
                                     <li>
+                                        <NavLink to="/energidata1" className='hover:bg-green-500' >
+                                        Energi Data1
+                                        </NavLink>
+                                    </li>
+                                    <li>
                                         <NavLink to="/graph" className='hover:bg-green-500' >
                                         Graph
                                         </NavLink>
